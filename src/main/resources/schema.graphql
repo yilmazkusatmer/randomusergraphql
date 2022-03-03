@@ -1,0 +1,92 @@
+type Info {
+  seed: String
+  results: Int
+  page: Int
+  version: String
+}
+
+type Picture {
+  large: String
+  medium: String
+  thumbnail: String
+}
+
+type Id {
+  name: String
+  value: String
+}
+
+type Registered {
+  date: String
+  age: Int
+}
+
+type Dob {
+  date: String
+  age: Int
+}
+
+type Login {
+  uuid: String
+  username: String
+  password: String
+  salt: String
+  md5: String
+  sha1: String
+  sha256: String
+}
+
+type Timezone {
+  offset: String
+  description: String
+}
+
+type Coordinates {
+  latitude: String
+  longitude: String
+}
+
+type Street {
+  number: Int
+  name: String
+}
+
+type Location {
+  city: String
+  state: String
+  country: String
+  postcode: String
+  timezone: Timezone
+  coordinates: Coordinates
+  street: Street
+}
+
+type Name {
+  title: String
+  first: String
+  last: String
+}
+
+type Results {
+  gender: String
+  email: String
+  phone: String
+  cell: String
+  nat: String
+  picture: Picture
+  id: Id
+  registered: Registered
+  dob: Dob
+  login: Login
+  location: Location
+  name: Name
+}
+
+type Query{
+  result: Result
+}
+
+type Result {
+  info: Info
+  results: [Results]
+}
