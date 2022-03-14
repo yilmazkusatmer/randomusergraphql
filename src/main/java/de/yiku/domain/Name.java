@@ -1,27 +1,18 @@
 package de.yiku.domain;
-@SuppressWarnings("unused")
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Name{
-    private final String title;
-    private final String first;
-    private final String last;
-
-    public Name(String title, String first, String last) {
-        this.title = title;
-        this.first = first;
-        this.last = last;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getFirst() {
-        return first;
-    }
-
-    public String getLast() {
-        return last;
-    }
+    private String title;
+    private String first;
+    private String last;
 }
 
 

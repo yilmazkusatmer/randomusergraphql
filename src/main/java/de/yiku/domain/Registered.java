@@ -1,21 +1,16 @@
 package de.yiku.domain;
 
 import java.time.Instant;
-@SuppressWarnings("unused")
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Registered {
-    private final Instant date;
-    private final int age;
-
-    public Registered(Instant date, int age) {
-        this.date = date;
-        this.age = age;
-    }
-
-    public Instant getDate() {
-        return date;
-    }
-
-    public int getAge() {
-        return age;
-    }
+    private Instant date;
+    private int age;
 }

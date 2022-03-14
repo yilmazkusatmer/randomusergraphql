@@ -1,19 +1,15 @@
 package de.yiku.domain;
-@SuppressWarnings("unused")
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Timezone {
-    private final String offset;
-    private final String description;
-
-    public Timezone(String offset, String description) {
-        this.offset = offset;
-        this.description = description;
-    }
-
-    public String getOffset() {
-        return offset;
-    }
-
-    public String getDescription() {
-        return description;
-    }
+    private String offset;
+    private String description;
 }

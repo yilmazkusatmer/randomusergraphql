@@ -1,19 +1,16 @@
 package de.yiku.domain;
-@SuppressWarnings("unused")
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Coordinates {
-    private final String latitude;
-    private final String longitude;
+    private String latitude;
+    private String longitude;
 
-    public Coordinates(String latitude, String longitude) {
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
 }

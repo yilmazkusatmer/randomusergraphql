@@ -1,19 +1,15 @@
 package de.yiku.domain;
-@SuppressWarnings("unused")
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Street{
-    private final int number;
-    private final String name;
-
-    public Street(int number, String name) {
-        this.number = number;
-        this.name = name;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public String getName() {
-        return name;
-    }
+    private int number;
+    private String name;
 }

@@ -1,21 +1,17 @@
 package de.yiku.domain;
 
 import java.util.ArrayList;
-@SuppressWarnings("unused")
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Root {
-    private final ArrayList<Result> results;
-    private final Info info;
-
-    public Root(ArrayList<Result> results, Info info) {
-        this.results = results;
-        this.info = info;
-    }
-
-    public ArrayList<Result> getResults() {
-        return results;
-    }
-
-    public Info getInfo() {
-        return info;
-    }
+    private ArrayList<Result> results;
+    private Info info;
 }

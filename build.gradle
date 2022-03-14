@@ -1,8 +1,13 @@
 plugins {
-    id 'org.springframework.boot' version '2.6.4'
+    id 'org.springframework.boot' version '2.5.6'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
+
+repositories {
+    mavenCentral()
+}
+
 
 group = 'de.yiku'
 version = '0.0.1-SNAPSHOT'
@@ -10,15 +15,21 @@ sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://repo.spring.io/milestone'
+    }
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation('com.graphql-java:graphql-java:11.0')
-    implementation('com.graphql-java:graphql-java-spring-boot-starter-webmvc:1.0')
-    runtimeOnly 'com.h2database:h2'
+    implementation 'org.springframework.experimental:graphql-spring-boot-starter:1.0.0-M4'
+    implementation 'org.springframework.data:spring-data-commons:2.6.0-RC1'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    compileOnly 'org.projectlombok:lombok:1.18.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
 }
 
 tasks.named('test') {

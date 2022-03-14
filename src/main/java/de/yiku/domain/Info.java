@@ -1,31 +1,17 @@
 package de.yiku.domain;
-@SuppressWarnings("unused")
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Info {
-    private final String seed;
-    private final int results;
-    private final int page;
-    private final String version;
-
-    public Info(String seed, int results, int page, String version) {
-        this.seed = seed;
-        this.results = results;
-        this.page = page;
-        this.version = version;
-    }
-
-    public String getSeed() {
-        return seed;
-    }
-
-    public int getResults() {
-        return results;
-    }
-
-    public int getPage() {
-        return page;
-    }
-
-    public String getVersion() {
-        return version;
-    }
+    private String seed;
+    private int results;
+    private int page;
+    private String version;
 }

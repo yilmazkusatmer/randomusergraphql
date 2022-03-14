@@ -67,7 +67,7 @@ type Name {
   last: String
 }
 
-type Results {
+type Result {
   gender: String
   email: String
   phone: String
@@ -83,10 +83,10 @@ type Results {
 }
 
 type Query{
-  result: Result
+  rootBy(page: Int = 0, limit: Int = 10, gender: String = "male,female", nat: String = "AU,BR,CA,CH,DE,DK,ES,FI,FR,GB,IE,IR,NO,NL,NZ,TR,US"): Root
 }
 
-type Result {
+type Root {
   info: Info
-  results: [Results]
+  results: [Result]
 }

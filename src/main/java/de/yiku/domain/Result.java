@@ -1,19 +1,22 @@
 package de.yiku.domain;
 
 public class Result {
-    private final String gender;
-    private final Name name;
-    private final Location location;
-    private final String email;
-    private final Login login;
-    private final Dob dob;
-    private final Registered registered;
-    private final String phone;
-    private final String cell;
-    private final Id id;
-    private final Picture picture;
-    private final String nat;
+    private String gender;
+    private Name name;
+    private Location location;
+    private String email;
+    private Login login;
+    private Dob dob;
+    private Registered registered;
+    private String phone;
+    private String cell;
+    private Id id;
+    private Picture picture;
+    private String nat;
 
+    public Result(){
+
+    }
     public Result(String gender, Name name, Location location, String email, Login login, Dob dob, Registered registered, String phone, String cell, Id id, Picture picture, String nat) {
         this.gender = gender;
         this.name = name;
