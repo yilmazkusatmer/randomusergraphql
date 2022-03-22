@@ -17,8 +17,8 @@ public class RootQueryController {
     }
 
     @QueryMapping
-    public Root rootBy(@Argument  int page, @Argument int limit, @Argument String nat, @Argument String gender) {
-        return client.rootBy(page, limit, gender, nat);
+    public Root root(@Argument  int page, @Argument int limit) {
+        return client.root(page, limit);
     }
 
 }
