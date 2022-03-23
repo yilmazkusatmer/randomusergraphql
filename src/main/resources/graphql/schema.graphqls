@@ -83,7 +83,7 @@ type Result {
 }
 
 type Query{
-  root(page: Int = 0, limit: Int = 10): Root
+  root(page: Int = 0, limit: Int = 10, gender: String = "female,male"): Root
 }
 
 type Root {

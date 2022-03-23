@@ -17,13 +17,15 @@ public class RandomUserClient {
     }
 
 
-    public Root root(int page, int limit) {
+    public Root root(int page, int limit, String gender) {
         Map<String, String> params = new HashMap<>();
         params.put("page", String.valueOf(page));
         params.put("results", String.valueOf(limit));
+        params.put("gender", gender);
         return this.restTemplate
                 .exchange("https://randomuser.me/api/?page={page}" +
-                                "&results={results}",
+                                "&results={results}" +
+                                "&gender={gender}",
                         HttpMethod.GET, null, Root.class, params)
                 .getBody();
     }
