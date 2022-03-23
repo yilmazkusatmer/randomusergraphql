@@ -16,7 +16,6 @@ public class RandomUserClient {
         this.restTemplate = new RestTemplate();
     }
 
-
     public Root root(int page, int limit, String gender) {
         Map<String, String> params = new HashMap<>();
         params.put("page", String.valueOf(page));
