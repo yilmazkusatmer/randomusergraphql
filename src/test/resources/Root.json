@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Mrs",
+        "first": "Elizabeth",
+        "last": "Harcourt"
+      },
+      "location": {
+        "street": {
+          "number": 9420,
+          "name": "St. Catherine St"
+        },
+        "city": "Lumsden",
+        "state": "Saskatchewan",
+        "country": "Canada",
+        "postcode": "C9Y 7S6",
+        "coordinates": {
+          "latitude": "-65.9532",
+          "longitude": "151.8249"
+        },
+        "timezone": {
+          "offset": "+9:30",
+          "description": "Adelaide, Darwin"
+        }
+      },
+      "email": "elizabeth.harcourt@example.com",
+      "login": {
+        "uuid": "568efd8e-5a36-4d42-b5dc-8cae5e284271",
+        "username": "smallleopard775",
+        "password": "slippery",
+        "salt": "QnAZtiBv",
+        "md5": "8fbb84dde60548047f9d244bbb878921",
+        "sha1": "ef9586e3c486a2eb1ca3b00e14bea0697df5222a",
+        "sha256": "98e1dc12ec8f1da1ca1f915c1b4a96534f37a66f99e5fae959062e2b9d616f9d"
+      },
+      "dob": {
+        "date": "1981-05-15T11:47:43.758Z",
+        "age": 41
+      },
+      "registered": {
+        "date": "2017-12-21T20:41:27.782Z",
+        "age": 5
+      },
+      "phone": "915-214-0764",
+      "cell": "308-111-3569",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/30.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/30.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/30.jpg"
+      },
+      "nat": "CA"
+    }
+  ],
+  "info": {
+    "seed": "7053d5686200d8ec",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}
