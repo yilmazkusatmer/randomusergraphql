@@ -58,7 +58,7 @@ class RootQueryControllerTest {
     }
 
     @Test
-    public void should_have_size_one() throws IOException {
+    void should_have_size_one()  {
         given(this.randomUserClient.root(anyInt(), anyInt(), anyString()))
                 .willReturn(this.root);
 
@@ -70,7 +70,7 @@ class RootQueryControllerTest {
     }
 
     @Test
-    public void should_return_correct_name() throws IOException {
+    void should_return_correct_name() {
         given(this.randomUserClient.root(anyInt(), anyInt(), anyString()))
                 .willReturn(this.root);
 
