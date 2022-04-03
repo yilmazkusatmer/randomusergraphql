@@ -1,0 +1,6 @@
+mutation AddUser($email:String!){
+  addUser(userInput:
+    {email: $email}) {
+    email
+  }
+}

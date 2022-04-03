@@ -1,0 +1,17 @@
+query GetUsers($limit: Int) {
+  root(limit: $limit) {
+    users {
+      name {
+        first
+        last
+      }
+      picture {
+        large
+      }
+      location{
+        city
+        country
+      }
+    }
+  }
+}

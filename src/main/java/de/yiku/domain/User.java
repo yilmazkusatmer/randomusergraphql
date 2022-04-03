@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class Result {
+public class User {
     private String gender;
     private Name name;
     private Location location;

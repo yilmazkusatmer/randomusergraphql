@@ -18,9 +18,9 @@ import org.springframework.graphql.test.tester.GraphQlTester;
 import java.io.File;
 import java.io.IOException;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
 
 @GraphQlTest(RootQueryController.class)
@@ -28,9 +28,9 @@ import static org.mockito.BDDMockito.given;
 class RootQueryControllerTest {
 
 
-    private final String query  = "{\n" +
+    private final String query = "{\n" +
             "  root{\n" +
-            "    results {\n" +
+            "    users {\n" +
             "      name {\n" +
             "        first\n" +
             "      }\n" +
@@ -38,7 +38,7 @@ class RootQueryControllerTest {
             "  }\n" +
             "}";
 
-    @Value("classpath:Root.json")
+    @Value("classpath:OneUser.json")
     Resource resourceFile;
 
     @Autowired
@@ -55,28 +55,30 @@ class RootQueryControllerTest {
         mapper.registerModule(new JavaTimeModule());
         File jsonTestFile = resourceFile.getFile();
         this.root = mapper.readValue(jsonTestFile, Root.class);
+        System.out.println(root.getUsers().size());
+        System.out.println(mapper.writeValueAsString(this.root));
     }
 
     @Test
-    void should_have_size_one()  {
-        given(this.randomUserClient.root(anyInt(), anyInt(), anyString()))
+    void should_have_size_one() {
+        given(this.randomUserClient.fetchRoot(anyInt(), anyInt(), anyString()))
                 .willReturn(this.root);
 
         this.graphQlTester.query(query)
                 .execute()
                 .path("data.root")
                 .entity(Root.class)
-                .satisfies(root -> assertThat(root.getResults()).hasSize(1));
+                .satisfies(root -> assertThat(root.getUsers()).hasSize(1));
     }
 
     @Test
-    void should_return_correct_name() {
-        given(this.randomUserClient.root(anyInt(), anyInt(), anyString()))
+    void should_return_correct_firstname() {
+        given(this.randomUserClient.fetchRoot(anyInt(), anyInt(), anyString()))
                 .willReturn(this.root);
 
         this.graphQlTester.query(query)
                 .execute()
-                .path("data.root.results[0].name")
+                .path("data.root.users[0].name")
                 .entity(Name.class)
                 .satisfies(name -> assertThat(name.getFirst()).isEqualTo("Elizabeth"));
 

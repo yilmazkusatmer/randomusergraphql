@@ -67,7 +67,7 @@ type Name {
   last: String
 }
 
-type Result {
+type User {
   gender: String
   email: String
   phone: String
@@ -86,7 +86,17 @@ type Query{
   root(page: Int = 0, limit: Int = 10, gender: String = "female,male"): Root
 }
 
+# Root contains Info for paging and list of users.
 type Root {
   info: Info
-  results: [Result]
+  # return list of users.
+  users: [User]
+}
+
+input UserInput{
+  email: String!
+}
+
+type Mutation {
+  addUser(userInput: UserInput!):User
 }
